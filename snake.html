@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Snake Game</h1>
+    
+    <!-- Container to display the current score -->
+    <div id="scoreDisplayContainer">
+        <h2 id="scoreDisplay">Score: 0</h2>
+    </div>
+    
+    <!-- Game canvas for the Snake game -->
+    <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+
+    <!-- Game Over popup -->
+    <div id="gameOverPopup" class="popup">
+        <div class="popup-content">
+            <h2>Game Over!</h2>
+            <p id="gameOverScore"></p>
+            <button onclick="closeGameOverPopup()">Retry</button>
+        </div>
+    </div>
+
+    <!-- Start Game button -->
+    <button id="startGameBtn">Start Game</button>
+
+    <!-- Audio elements for background music and sound effects -->
+    <audio id="bgm" src="assets/audio/bgm.mp3" loop></audio>
+    <audio id="eatSound" src="assets/audio/eat-sfx.mp3"></audio>
+    <audio id="gameOverSound" src="assets/audio/gameover-sfx.mp3"></audio>
+
+    <!-- Images for the snake head and body -->
+    <img id="headUp" src="assets/img/snake_head_up.png" style="display: none;">
+    <img id="headDown" src="assets/img/snake_head_down.png" style="display: none;">
+    <img id="headLeft" src="assets/img/snake_head_left.png" style="display: none;">
+    <img id="headRight" src="assets/img/snake_head_right.png" style="display: none;">
+    <img id="bodyImg" src="assets/img/snake_body.png" style="display: none;">
+
+    <!-- Link to the JavaScript game logic -->
+    <script src="snake.js"></script>
+</body>
+
+</html>

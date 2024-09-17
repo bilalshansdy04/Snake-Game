@@ -1,0 +1,110 @@
+/* Global body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  /* Title styling */
+  h1 {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Menu styling for game selection */
+  #menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Button styling for the menu */
+  button {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  /* Game canvas styling */
+  canvas {
+    border: 2px solid #000;
+    background-color: #fafafa;
+  }
+  
+  /* Popup modal styling */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  /* Popup content styling */
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Title in popup */
+  .popup-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels for settings in popup */
+  .popup-content label {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Range slider styling for volume control */
+  input[type="range"] {
+    width: 200px;
+  }
+  
+  /* Styling for the score display container */
+  #scoreDisplayContainer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Game Over popup styling */
+  #gameOverPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  /* Styling for the content inside Game Over popup */
+  .gameOverPopup .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .gameOverPopup h2 {
+    margin-bottom: 20px;
+  }
+  

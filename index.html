@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Game Selection</h1>
+    
+    <!-- Main menu for game selection -->
+    <div id="menu">
+        <button onclick="window.location.href='snake.html'">Play Snake</button>
+        <button onclick="openSettings()">Settings</button>
+    </div>
+
+    <!-- Popup for audio settings -->
+    <div id="settingsPopup" class="popup">
+        <div class="popup-content">
+            <h2>Audio Settings</h2>
+            <label>
+                <input type="checkbox" id="bgmToggle" checked> Background Music
+            </label><br>
+            <label for="bgmVolume">BGM Volume</label>
+            <input type="range" id="bgmVolume" min="0" max="1" step="0.1" value="1"><br><br>
+
+            <label>
+                <input type="checkbox" id="sfxToggle" checked> Sound Effects
+            </label><br>
+            <label for="sfxVolume">SFX Volume</label>
+            <input type="range" id="sfxVolume" min="0" max="1" step="0.1" value="1"><br><br>
+
+            <button onclick="saveSettings()">Save</button>
+            <button onclick="closeSettings()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the settings popup
+        function openSettings() {
+            document.getElementById('settingsPopup').style.display = 'block';
+
+            // Load values from localStorage, or use default values if none exist
+            document.getElementById('bgmToggle').checked = localStorage.getItem('bgmEnabled') === 'true';
+            document.getElementById('bgmVolume').value = localStorage.getItem('bgmVolume') || 1;
+            document.getElementById('sfxToggle').checked = localStorage.getItem('sfxEnabled') === 'true';
+            document.getElementById('sfxVolume').value = localStorage.getItem('sfxVolume') || 1;
+        }
+
+        // Function to close the settings popup
+        function closeSettings() {
+            document.getElementById('settingsPopup').style.display = 'none';
+        }
+
+        // Function to save settings to localStorage
+        function saveSettings() {
+            const bgmToggle = document.getElementById('bgmToggle').checked;
+            const bgmVolume = document.getElementById('bgmVolume').value;
+            const sfxToggle = document.getElementById('sfxToggle').checked;
+            const sfxVolume = document.getElementById('sfxVolume').value;
+
+            // Store values in localStorage
+            localStorage.setItem('bgmEnabled', bgmToggle);
+            localStorage.setItem('bgmVolume', bgmVolume);
+            localStorage.setItem('sfxEnabled', sfxToggle);
+            localStorage.setItem('sfxVolume', sfxVolume);
+
+            // Close the settings popup after saving
+            closeSettings();
+        }
+    </script>
+</body>
+</html>
