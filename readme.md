@@ -32,4 +32,4 @@ A classic Snake game built using HTML, CSS, and JavaScript. The game features so
 1. Clone the repository:
    ```bash
    git clone https://github.com/bilalshansdy04/Snake-Game
-2. Open index.html in your browser to start the game selection.
+2. Open index.html in your browser to start the game.
